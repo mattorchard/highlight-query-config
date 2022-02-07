@@ -1,0 +1,40 @@
+{
+  "fileTypes": [],
+  "injectionSelector": "L:source -comment -string",
+  "patterns": [
+    {
+      "name": "query-config",
+      "contentName": "meta.embedded.block.sql",
+      "begin": "(text\\s?[:=]\\s*`)",
+      "beginCaptures": {
+        "0": {
+          "name": "string.js"
+        },
+        "1": {
+          "name": "punctuation.definition.string.template.begin.js"
+        }
+      },
+      "end": "(`)",
+      "endCaptures": {
+        "0": {
+          "name": "string.js"
+        },
+        "1": {
+          "name": "punctuation.definition.string.template.end.js"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "source.sql"
+        },
+        {
+          "include": "source.plpgsql.postgres"
+        }
+      ]
+    }
+  ],
+  "scopeName": "inline.lit-sql"
+}

@@ -1,0 +1,32 @@
+{
+    "name": "highlight-query-config",
+    "displayName": "highlight-query-config",
+    "description": "SQL highlighting inside JS query configs",
+    "version": "0.0.1",
+    "publisher": "MatthewOrchard",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "grammars": [
+            {
+                "injectTo": [
+                    "source.js",
+                    "source.ts"
+                ],
+                "scopeName": "inline.lit-sql",
+                "path": "./syntaxes/language-configuration.json",
+                "embeddedLanguages": {
+                    "meta.embedded.block.sql": "sql"
+                }
+            }
+        ]
+    }
+}
